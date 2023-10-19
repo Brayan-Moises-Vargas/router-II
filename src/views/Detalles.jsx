@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom"
 import CardPoke from "../components/CardPoke"
-import { useState } from "react"
-import { useEffect } from "react"
+import { useState, useEffect } from "react"
+
 
 const Detalles = () => {
   
@@ -21,8 +21,8 @@ const Detalles = () => {
           name: stat.stat.name, 
           base: stat.base_stat
         }))
-        const type = data.types.map(({type}) => type.name).join(" ")
-        setPokemon({name, stats, src, type})
+        const types = data.types.map(({type}) => type.name).join(" ")
+        setPokemon({name, stats, src, types})
       }
        catch (error) {
       console.log(error);
